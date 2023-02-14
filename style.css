@@ -1,0 +1,48 @@
+#screen {
+  aspect-ratio: 16/9;
+  width: 100vw;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+}
+body {
+  margin: 0;
+}
+#game {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#start {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#game_over {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#level_complete {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#game_background {
+  aspect-ratio: inherit;
+  width: 100%;
+  background-image: url(https://img.freepik.com/free-photo/parquet-floor-texture_1194-6957.jpg?w=900&t=st=1676385734~exp=1676386334~hmac=3b4320bb3b4c504c4f3ce81fbbc26a6697cfc82540e95db112fea8035caf3c30);
+  background-size: 100%;
+  position: absolute;
+}
+#game_ui {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#game_elements {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
