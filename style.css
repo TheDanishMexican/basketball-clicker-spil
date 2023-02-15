@@ -51,7 +51,7 @@ body {
   translate: -40% -40%;
 }
 #soccerball_sprite {
-  scale: 0.35;
+  scale: 0.2;
   translate: -34% -115%;
 }
 #volleyball_sprite {
@@ -65,4 +65,36 @@ body {
 #frenzy_basketball_sprite {
   scale: 0.08;
   translate: -45% -192%;
+}
+#basketball_sprite {
+  animation-name: falling;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(-190%, 0%);
+  }
+
+  100% {
+    transform: translate(1300%, 0%);
+  }
+}
+#soccerball_sprite {
+  animation-name: falling;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate(-100%, 0%);
+  }
+
+  100% {
+    transform: translate(1300%, 0%);
+  }
 }
