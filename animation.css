@@ -1,0 +1,16 @@
+.shooting {
+  animation-name: shooting;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shooting {
+  0% {
+    transform: translate(-100%, 0%);
+  }
+
+  100% {
+    transform: translate(100%, 0%);
+  }
+}
