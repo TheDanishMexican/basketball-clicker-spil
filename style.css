@@ -8,6 +8,7 @@
 }
 body {
   margin: 0;
+  overflow: hidden;
 }
 #game {
   aspect-ratio: inherit;
@@ -36,10 +37,27 @@ body {
   background-size: 100%;
   position: absolute;
 }
+#game_foreground {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+#game_foreground img {
+  width: 100%;
+}
+#got_blocked {
+  width: 22vw;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+}
 #game_ui {
   aspect-ratio: inherit;
   width: 100%;
   position: absolute;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 6fr;
 }
 #game_elements {
   aspect-ratio: inherit;
@@ -53,4 +71,15 @@ body {
 }
 .ball img {
   width: 100%;
+}
+#game_ui img {
+  width: 100%;
+}
+#life_board {
+  width: 15vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#score_board {
+  width: 20vw;
 }
