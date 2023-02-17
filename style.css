@@ -3,8 +3,8 @@
   width: 100vw;
   position: absolute;
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 1;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 body {
   margin: 0;
@@ -14,6 +14,9 @@ body {
   aspect-ratio: inherit;
   width: 100%;
   position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 #start {
   aspect-ratio: inherit;
@@ -31,14 +34,13 @@ body {
   position: absolute;
 }
 #game_background {
-  aspect-ratio: inherit;
-  width: 100%;
+  grid-area: 1/1;
   background-image: url(images/basketball_court.png);
-  background-size: 100%;
-  position: absolute;
+  background-size: cover;
 }
 #game_foreground {
   aspect-ratio: inherit;
+  grid-area: 1/1;
   width: 100%;
   position: absolute;
 }
@@ -59,9 +61,8 @@ body {
   grid-template-columns: 5fr 5fr 2fr;
 }
 #game_elements {
-  aspect-ratio: inherit;
-  width: 100%;
-  position: absolute;
+  grid-area: 1/1;
+  position: relative;
   overflow: hidden;
 }
 .ball {
@@ -91,17 +92,30 @@ body {
 
 #volleyball_container {
   top: 40%;
+  scale: 1.8;
 }
 #basketball_container {
   top: 70%;
+  scale: 1.3;
 }
 #american_football_container {
   top: 60%;
 }
 #soccerball_container {
   top: 30%;
-  scale: 1.5;
+  scale: 2;
 }
 #frenzy_basketball_container {
   top: 50%;
+}
+#game_over {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+  background-image: url(images/game_over.jpg);
+  background-size: cover;
+}
+
+.hidden {
+  display: none;
 }
