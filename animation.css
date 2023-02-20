@@ -1,17 +1,25 @@
 .shooting {
   animation-name: shooting;
-  animation-duration: 7s;
+  animation-duration: 5s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
 
 @keyframes shooting {
   0% {
-    transform: translate(-6vw, 0%);
+    transform: translate(0vw, 0vw);
+  }
+
+  33% {
+    transform: translate(33vw, -10vw);
+  }
+
+  66% {
+    transform: translate(66vw, 0vw);
   }
 
   100% {
-    transform: translate(100vw, 0%);
+    transform: translate(99vw, -10vw);
   }
 }
 
