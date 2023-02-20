@@ -4,6 +4,9 @@ function start() {
   document
     .querySelector("#basketball_container")
     .addEventListener("mousedown", basketballshot);
+  document
+    .querySelector("#basketball_container")
+    .addEventListener("animationend", basketballshot);
 }
 
 function basketballshot() {
