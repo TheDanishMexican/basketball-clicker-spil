@@ -138,7 +138,7 @@ body {
 }
 
 body {
-  cursor: url("images/basketball_hoop.png"), auto;
+  cursor: url("images/basketball_hoop.png") 25 15, auto;
 }
 .broken_heart {
   filter: grayscale(75%) blur(0.5px);
