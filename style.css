@@ -81,14 +81,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-#score_board {
-  width: 15vw;
-  grid-column: 2/3;
-}
-
-#score_board img {
-  translate: 0% -20%;
-}
 
 #volleyball_container {
   top: 40%;
@@ -137,12 +129,31 @@ body {
   scale: 1.3;
 }
 
-body {
-  cursor: url("images/basketball_hoop.png") 25 15, auto;
-}
 .broken_heart {
   filter: grayscale(75%) blur(0.5px);
 }
 .active_heart {
   filter: drop-shadow(0 0 2px yellow);
+}
+
+#score_board {
+  /* width: 5vw; */
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#bbscore img {
+  scale: 25%;
+  translate: -20vw -8vw;
+}
+
+#scoretext {
+  color: antiquewhite;
+  font-size: 4vw;
+  translate: 6vw 0vw;
+}
+
+body {
+  cursor: url("images/basketball_hoop.png") 50 50, auto;
 }
