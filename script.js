@@ -4,6 +4,9 @@ function start() {
   document
     .querySelector("#basketball_container")
     .addEventListener("mousedown", basketballshot);
+  document
+    .querySelector("#volleyball_container")
+    .addEventListener("mousedown", nonbasketballshot);
 }
 
 function basketballshot() {
@@ -12,4 +15,12 @@ function basketballshot() {
     .removeEventListener("mousedown", basketballshot);
   document.querySelector("#basketball_container").classList.add("paused");
   document.querySelector("#basketball_sprite").classList.add("zoom_out");
+}
+
+function nonbasketballshot() {
+  document
+    .querySelector("#volleyball_container")
+    .removeEventListener("mousedown", nonbasketballshot);
+  document.querySelector("#volleyball_container").classList.add("paused");
+  document.querySelector("#volleyball_sprite").classList.add("zoom_out");
 }

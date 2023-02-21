@@ -39,3 +39,19 @@
     transform: scale(0%) rotate(360deg);
   }
 }
+.fade_in_out {
+  animation-name: fade_in_out;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade_in_out {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
