@@ -140,3 +140,9 @@ body {
 body {
   cursor: url("images/basketball_hoop.png"), auto;
 }
+.broken_heart {
+  filter: grayscale(75%) blur(0.5px);
+}
+.active_heart {
+  filter: drop-shadow(0 0 2px yellow);
+}
