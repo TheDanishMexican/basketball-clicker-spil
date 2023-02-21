@@ -2,7 +2,7 @@
   animation-name: shooting;
   animation-duration: 5s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
 }
 
 @keyframes shooting {
@@ -58,13 +58,17 @@
 
 .timer {
   animation-name: timer;
-  animation-duration: 30s;
+  animation-duration: 3s;
   animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-iteration-count: 1;
 }
 
 @keyframes timer {
   100% {
     transform: translate(-41vw, 0vw);
   }
+}
+
+#game_over {
+  scale: 0.9;
 }

@@ -12,6 +12,7 @@ function start() {
   document
     .querySelector("#volleyball_container")
     .addEventListener("mousedown", nonbasketballshot);
+  document.querySelector("#full").addEventListener("animationend", gameOver);
 }
 
 function basketballshot() {
@@ -49,7 +50,13 @@ function displayLife() {
 }
 
 function loseLife() {
-  console.log("loseLife");
+  console.log("you lost a life");
   displayLife();
   life -= 1;
+}
+
+// Denne her funktion lave gameover screen når tiden løber ud
+
+function gameOver() {
+  document.querySelector("#game_over").classList.remove("hidden");
 }
