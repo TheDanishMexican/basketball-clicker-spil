@@ -137,7 +137,6 @@ body {
 }
 
 #score_board {
-  /* width: 5vw; */
   grid-column: 2/3;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -156,4 +155,11 @@ body {
 
 body {
   cursor: url("images/basketball_hoop.png") 50 50, auto;
+}
+
+#full {
+  translate: -1.5vw -56.5vw;
+}
+#empty {
+  translate: -1.5vw -20.1vw;
 }

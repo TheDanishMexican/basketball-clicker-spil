@@ -55,3 +55,16 @@
     opacity: 1;
   }
 }
+
+.timer {
+  animation-name: timer;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes timer {
+  100% {
+    transform: translate(-41vw, 0vw);
+  }
+}

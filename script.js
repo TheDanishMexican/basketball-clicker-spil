@@ -2,6 +2,7 @@ window.addEventListener("load", start);
 
 ("use strict");
 
+let points = 0;
 let life = 3;
 
 function start() {
@@ -19,6 +20,18 @@ function basketballshot() {
     .removeEventListener("mousedown", basketballshot);
   document.querySelector("#basketball_container").classList.add("paused");
   document.querySelector("#basketball_sprite").classList.add("zoom_out");
+
+  gainPoints();
+}
+
+function gainPoints() {
+  console.log("you gained a point");
+  points += 1;
+  displayPoints();
+}
+
+function displayPoints() {
+  document.querySelector("#scoretext").textContent = points;
 }
 
 function nonbasketballshot() {
