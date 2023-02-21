@@ -4,9 +4,6 @@ function start() {
   document
     .querySelector("#basketball_container")
     .addEventListener("mousedown", basketballshot);
-  document
-    .querySelector("#basketball_container")
-    .addEventListener("animationend", basketballshot);
 }
 
 function basketballshot() {
@@ -14,4 +11,5 @@ function basketballshot() {
     .querySelector("#basketball_container")
     .removeEventListener("mousedown", basketballshot);
   document.querySelector("#basketball_container").classList.add("paused");
+  document.querySelector("#basketball_sprite").classList.add("zoom_out");
 }
