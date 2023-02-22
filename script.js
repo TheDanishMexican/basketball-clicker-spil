@@ -3,6 +3,7 @@ window.addEventListener("load", start);
 ("use strict");
 
 let points = 0;
+
 let life = 3;
 
 function start() {
@@ -95,6 +96,37 @@ function nonbasketballshot() {
   document.querySelector("#red_sprite").classList.remove("hidden");
 
   loseLife();
+
+  lifeEnd();
+}
+
+function lifeEnd() {
+  let heart1 = document.querySelector("#heart1");
+
+  let heart2 = document.querySelector("#heart2");
+
+  let heart3 = document.querySelector("#heart3");
+
+  let elementToUnhide = document.querySelector("#game_over");
+
+  let elementToStop = document.querySelector("#full");
+
+  let visibleCount = 0;
+
+  if (window.getComputedStyle(heart1).display !== "none") {
+    visibleCount += 1;
+  }
+  if (window.getComputedStyle(heart2).display !== "none") {
+    visibleCount += 1;
+  }
+  if (window.getComputedStyle(heart3).display !== "none") {
+    visibleCount += 1;
+  }
+
+  if (visibleCount === 0) {
+    elementToUnhide.classList.remove("hidden");
+    elementToStop.style.animationPlayState = "paused";
+  }
 }
 
 function nonBasketballGone() {
@@ -124,8 +156,7 @@ function nonBasketballGone() {
 }
 
 function displayLife() {
-  document.querySelector("#heart" + life).classList.remove("active_heart");
-  document.querySelector("#heart" + life).classList.add("broken_heart");
+  document.querySelector("#heart" + life).classList.add("hidden");
 }
 
 function loseLife() {
