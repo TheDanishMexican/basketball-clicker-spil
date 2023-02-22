@@ -158,8 +158,8 @@ body {
 }
 
 #full {
-  translate: -1.5vw -56.5vw;
+  translate: 0.5vw -56.7vw;
 }
 #empty {
-  translate: -1.5vw -20.1vw;
+  translate: 0.5vw -20.5vw;
 }
