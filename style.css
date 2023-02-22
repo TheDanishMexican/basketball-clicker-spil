@@ -173,3 +173,11 @@ body {
   position: absolute;
   scale: 0.7;
 }
+
+#start {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+  background-image: url(images/start_screen.jpg);
+  background-size: cover;
+}

@@ -19,6 +19,10 @@ function start() {
     .addEventListener("mousedown", nonbasketballshot);
 
   document.querySelector("#full").addEventListener("animationend", gameOver);
+
+  document
+    .querySelector("#full")
+    .addEventListener("animationend", stopAnimation);
 }
 
 function basketballshot() {
@@ -135,8 +139,4 @@ function loseLife() {
 function gameOver() {
   document.querySelector("#game_over").classList.remove("hidden");
   console.log("animation ends");
-
-  document.querySelector("#basketball_container").classList.remove("shooting");
-
-  document.querySelector("#volleyball_container").classList.remove("shooting");
 }

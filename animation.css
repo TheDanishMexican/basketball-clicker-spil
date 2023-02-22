@@ -58,7 +58,7 @@
 
 .timer {
   animation-name: timer;
-  animation-duration: 30s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   transform-origin: left center;
