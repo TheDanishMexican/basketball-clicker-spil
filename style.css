@@ -89,7 +89,7 @@ body {
 }
 #basketball_container {
   top: 70%;
-  scale: 1.3;
+  scale: 1;
 }
 #american_football_container {
   top: 60%;
@@ -155,12 +155,21 @@ body {
 }
 
 body {
-  cursor: url("images/basketball_hoop.png"), auto;
+  cursor: url("images/basketball_hoop.png") 25 0, auto;
 }
 
 #full {
-  translate: 0.5vw -56.7vw;
+  translate: 1vw -56.7vw;
 }
 #empty {
   translate: 0.5vw -20.5vw;
+}
+
+#green_sprite {
+  position: absolute;
+}
+
+#red_sprite {
+  position: absolute;
+  scale: 0.7;
 }

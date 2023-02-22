@@ -30,6 +30,8 @@ function basketballshot() {
 
   document.querySelector("#basketball_sprite").classList.add("zoom_out");
 
+  document.querySelector("#green_sprite").classList.remove("hidden");
+
   document
     .querySelector("#basketball_container")
     .addEventListener("animationend", basketballGone);
@@ -59,6 +61,8 @@ function basketballGone() {
   document
     .querySelector("#basketball_container")
     .addEventListener("click", basketballshot);
+
+  document.querySelector("#green_sprite").classList.add("hidden");
 }
 
 function gainPoints() {
@@ -83,6 +87,8 @@ function nonbasketballshot() {
   document
     .querySelector("#volleyball_container")
     .addEventListener("animationend", nonBasketballGone);
+
+  document.querySelector("#red_sprite").classList.remove("hidden");
 
   loseLife();
 }
@@ -109,6 +115,8 @@ function nonBasketballGone() {
   document
     .querySelector("#volleyball_container")
     .addEventListener("click", nonbasketballshot);
+
+  document.querySelector("#red_sprite").classList.add("hidden");
 }
 
 function displayLife() {

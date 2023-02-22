@@ -1,6 +1,6 @@
 .shooting {
   animation-name: shooting;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -73,4 +73,17 @@
 #game_over {
   scale: 0.7;
   translate: 0vw -2vw;
+}
+
+.show_check {
+  animation-name: show_check;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes show_check {
+  100% {
+    translate: opacity(1);
+  }
 }
