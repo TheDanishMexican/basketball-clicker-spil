@@ -19,11 +19,15 @@ function start() {
     .querySelector("#volleyball_container")
     .addEventListener("mousedown", nonbasketballshot);
 
-  document.querySelector("#full").addEventListener("animationend", gameOver);
+  document.querySelector("#full").addEventListener("animationend", timeOver);
+}
 
-  document
-    .querySelector("#full")
-    .addEventListener("animationend", stopAnimation);
+function timeOver() {
+  console.log("time is up");
+  document.querySelector("#full"),
+    removeEventListener("animationend", timeOver);
+
+  document.querySelector("#game_over").classList.remove("hidden");
 }
 
 function basketballshot() {
@@ -109,7 +113,7 @@ function lifeEnd() {
 
   let elementToUnhide = document.querySelector("#game_over");
 
-  let elementToStop = document.querySelector("#full");
+  let timeBar = document.querySelector("#full");
 
   let visibleCount = 0;
 
@@ -125,7 +129,7 @@ function lifeEnd() {
 
   if (visibleCount === 0) {
     elementToUnhide.classList.remove("hidden");
-    elementToStop.style.animationPlayState = "paused";
+    timeBar.style.animationPlayState = "paused";
   }
 }
 
@@ -163,11 +167,4 @@ function loseLife() {
   console.log("you lost a life");
   displayLife();
   life -= 1;
-}
-
-// Denne her funktion lave gameover screen når tiden løber ud
-
-function gameOver() {
-  document.querySelector("#game_over").classList.remove("hidden");
-  console.log("animation ends");
 }
