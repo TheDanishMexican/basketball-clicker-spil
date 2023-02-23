@@ -19,13 +19,7 @@ function start() {
     .querySelector("#volleyball_container")
     .addEventListener("mousedown", nonbasketballshot);
 
-  document.querySelector("#full").addEventListener("animationend", timeOver);
-}
-
-function timeOver() {
-  console.log("time is up");
-  document.querySelector("#full"),
-    removeEventListener("animationend", timeOver);
+  document.querySelector("#full").addEventListener("animationend", gameOver);
 }
 
 function basketballshot() {
@@ -75,6 +69,9 @@ function basketballGone() {
 function gainPoints() {
   console.log("you gained a point");
   points += 1;
+  if (points == 3) {
+    levelComplete();
+  }
   displayPoints();
 }
 
@@ -98,8 +95,6 @@ function nonbasketballshot() {
   document.querySelector("#red_sprite").classList.remove("hidden");
 
   loseLife();
-
-  lifeEnd();
 }
 
 function nonBasketballGone() {
@@ -129,11 +124,28 @@ function nonBasketballGone() {
 }
 
 function displayLife() {
-  document.querySelector("#heart" + life).classList.add("hidden");
+  document.querySelector("#heart" + life).classList.remove("active_heart");
+  document.querySelector("#heart" + life).classList.add("broken_heart");
 }
 
 function loseLife() {
   console.log("you lost a life");
-  displayLife();
-  life -= 1;
+  if (life > 0) {
+    displayLife();
+  } else {
+    gameOver();
+  }
+  life--;
+}
+
+function gameOver() {
+  console.log("game should end now");
+  document.querySelector("#game_over_screen").classList.remove("hidden2");
+  document.querySelector("#full");
+  removeEventListener("animationend", gameOver);
+}
+
+function levelComplete() {
+  console.log("game should level up now");
+  document.querySelector("#level_complete").classList.remove("hidden2");
 }
