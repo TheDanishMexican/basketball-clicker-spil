@@ -1,6 +1,6 @@
 .shooting {
   animation-name: shooting;
-  animation-duration: 5s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
@@ -58,7 +58,7 @@
 
 .timer {
   animation-name: timer;
-  animation-duration: 10s;
+  animation-duration: 60s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
   transform-origin: left center;

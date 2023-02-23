@@ -26,8 +26,6 @@ function timeOver() {
   console.log("time is up");
   document.querySelector("#full"),
     removeEventListener("animationend", timeOver);
-
-  document.querySelector("#game_over").classList.remove("hidden");
 }
 
 function basketballshot() {
@@ -102,35 +100,6 @@ function nonbasketballshot() {
   loseLife();
 
   lifeEnd();
-}
-
-function lifeEnd() {
-  let heart1 = document.querySelector("#heart1");
-
-  let heart2 = document.querySelector("#heart2");
-
-  let heart3 = document.querySelector("#heart3");
-
-  let elementToUnhide = document.querySelector("#game_over");
-
-  let timeBar = document.querySelector("#full");
-
-  let visibleCount = 0;
-
-  if (window.getComputedStyle(heart1).display !== "none") {
-    visibleCount += 1;
-  }
-  if (window.getComputedStyle(heart2).display !== "none") {
-    visibleCount += 1;
-  }
-  if (window.getComputedStyle(heart3).display !== "none") {
-    visibleCount += 1;
-  }
-
-  if (visibleCount === 0) {
-    elementToUnhide.classList.remove("hidden");
-    timeBar.style.animationPlayState = "paused";
-  }
 }
 
 function nonBasketballGone() {
