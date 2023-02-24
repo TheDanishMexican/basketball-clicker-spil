@@ -138,12 +138,12 @@ function loseLife() {
   life--;
 }
 
-function gameOver() {
-  console.log("game should end now");
-  document.querySelector("#game_over_screen").classList.remove("hidden2");
-  document.querySelector("#full");
-  removeEventListener("animationend", gameOver);
-}
+// function gameOver() {
+//   console.log("game should end now");
+//   document.querySelector("#game_over_screen").classList.remove("hidden2");
+//   document.querySelector("#full");
+//   removeEventListener("animationend", gameOver);
+// }
 
 function levelComplete() {
   console.log("game should level up now");
