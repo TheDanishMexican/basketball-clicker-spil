@@ -9,13 +9,13 @@ let life = 3;
 function start() {
   document.querySelector("button").addEventListener("click", startGame);
 
+  document.querySelector("button").addEventListener("click", displayNameWin);
+
+  document.querySelector("button").addEventListener("click", displayNameLose);
+
   document
     .querySelector("#basketball_container")
     .addEventListener("mousedown", basketballshot);
-
-  document.querySelector("#basketball_container").classList.add("shooting");
-
-  document.querySelector("#volleyball_container").classList.add("shooting");
 
   document
     .querySelector("#volleyball_container")
@@ -154,6 +154,35 @@ function levelComplete() {
 
 function startGame() {
   console.log("this starts the game");
+
   document.querySelector("button").removeEventListener("click", startGame);
+
   document.querySelector("#start").classList.add("hidden2");
+
+  document.querySelector("#full").classList.add("timer");
+
+  document.querySelector("#basketball_container").classList.add("shooting");
+
+  document.querySelector("#volleyball_container").classList.add("shooting");
+}
+
+function displayNameWin() {
+  document.querySelector("button").removeEventListener("click", displayName);
+
+  let input = document.querySelector("#name");
+  let nameValue = input.value;
+
+  document.querySelector("#wintext").textContent = `You won ${nameValue}`;
+}
+function displayNameLose() {
+  document
+    .querySelector("button")
+    .removeEventListener("click", displayNameLose);
+
+  let input = document.querySelector("#name");
+  let nameValue = input.value;
+
+  document.querySelector(
+    "#losetext"
+  ).textContent = `You are a stupid loser ${nameValue}`;
 }

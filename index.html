@@ -48,7 +48,7 @@
             <div id="empty">
               <img src="images/timebarempty.png" alt="" />
             </div>
-            <div class="timer" id="full">
+            <div id="full">
               <img src="images/timebarfull.png" alt="" />
             </div>
           </div>
@@ -101,12 +101,15 @@
       </div>
       <div id="start">
         <div id="startbutton">
+          <input id="name" type="text" placeholder="Write your name here" />
           <button><p>Start game</p></button>
         </div>
       </div>
-      <div id="game_over_screen" class="hidden2"><p>GAME OVER LOSER</p></div>
+      <div id="game_over_screen" class="hidden2">
+        <p id="losetext">GAME OVER LOSER</p>
+      </div>
       <div id="level_complete" class="hidden2">
-        <p>GOOD JOB BOB YOU GOT 55 POINTS</p>
+        <p id="wintext">GOOD JOB BOB YOU GOT 55 POINTS</p>
       </div>
     </div>
     <script src="script.js"></script>

@@ -88,7 +88,6 @@ body {
 #volleyball_container {
   top: 40%;
   scale: 1;
-  animation-delay: 1s;
 }
 #basketball_container {
   top: 70%;
@@ -156,7 +155,7 @@ body {
 }
 
 body {
-  cursor: url("images/basketball_hoop.png") 25 0, auto;
+  cursor: url("images/basketball_hoop.png") 25 15, auto;
 }
 
 #full {
