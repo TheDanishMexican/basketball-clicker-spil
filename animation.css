@@ -1,9 +1,9 @@
-/* .shooting {
+.shooting {
   animation-name: shooting;
-  animation-duration: 3s;
+  animation-duration: 7s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-} */
+}
 
 @keyframes shooting {
   0% {

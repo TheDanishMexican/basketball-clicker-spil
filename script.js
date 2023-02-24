@@ -7,6 +7,8 @@ let points = 0;
 let life = 3;
 
 function start() {
+  document.querySelector("button").addEventListener("click", startGame);
+
   document
     .querySelector("#basketball_container")
     .addEventListener("mousedown", basketballshot);
@@ -138,14 +140,20 @@ function loseLife() {
   life--;
 }
 
-// function gameOver() {
-//   console.log("game should end now");
-//   document.querySelector("#game_over_screen").classList.remove("hidden2");
-//   document.querySelector("#full");
-//   removeEventListener("animationend", gameOver);
-// }
+function gameOver() {
+  console.log("game should end now");
+  document.querySelector("#game_over_screen").classList.remove("hidden2");
+  document.querySelector("#full");
+  removeEventListener("animationend", gameOver);
+}
 
 function levelComplete() {
   console.log("game should level up now");
   document.querySelector("#level_complete").classList.remove("hidden2");
+}
+
+function startGame() {
+  console.log("this starts the game");
+  document.querySelector("button").removeEventListener("click", startGame);
+  document.querySelector("#start").classList.add("hidden2");
 }
