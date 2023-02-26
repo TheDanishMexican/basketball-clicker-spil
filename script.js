@@ -164,10 +164,13 @@ function startGame() {
   document.querySelector("#basketball_container").classList.add("shooting");
 
   document.querySelector("#volleyball_container").classList.add("shooting");
+
+  removePaused();
 }
 
 function displayNameWin() {
-  document.querySelector("button").removeEventListener("click", displayName);
+  console.log("Wintext");
+  document.querySelector("button").removeEventListener("click", displayNameWin);
 
   let input = document.querySelector("#name");
   let nameValue = input.value;
@@ -185,4 +188,17 @@ function displayNameLose() {
   document.querySelector(
     "#losetext"
   ).textContent = `You are a stupid loser ${nameValue}`;
+}
+
+function removePaused() {
+  document.querySelector("#basketball2_container").classList.remove("paused");
+  document.querySelector("#basketball3_container").classList.remove("paused");
+
+  document
+    .querySelector("#frenzy_basketball_container")
+    .classList.remove("paused");
+  document
+    .querySelector("#american_football_container")
+    .classList.remove("paused");
+  document.querySelector("#soccerball_container").classList.remove("paused");
 }

@@ -88,6 +88,7 @@ body {
 #volleyball_container {
   top: 40%;
   scale: 1;
+  animation-delay: 1s;
 }
 #basketball_container {
   top: 70%;
@@ -96,14 +97,17 @@ body {
 #american_football_container {
   top: 60%;
   scale: 1;
+  animation-delay: 1s;
 }
 #soccerball_container {
   top: 30%;
   scale: 1;
+  animation-delay: 1s;
 }
 #frenzy_basketball_container {
   top: 50%;
   scale: 1;
+  animation-delay: 1s;
 }
 
 .hidden {
@@ -119,14 +123,6 @@ body {
 }
 #basketball3_container {
   top: 55%;
-  scale: 1;
-}
-#basketball4_container {
-  top: 65%;
-  scale: 1;
-}
-#basketball5_container {
-  top: 75%;
   scale: 1;
 }
 
@@ -197,7 +193,7 @@ body {
 
 #start {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 5fr;
   background-color: blanchedalmond;
 }
 
@@ -209,4 +205,32 @@ body {
   font-size: 10vw;
 
   text-align: center;
+}
+
+#startbutton p {
+  font-weight: bolder;
+}
+
+#explanation {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+  font-size: larger;
+}
+
+#instructions {
+  margin-top: 3vw;
+}
+
+#instructions li {
+  text-align: left;
+  margin-inline: 25vw;
+}
+
+#instructions em {
+  text-decoration: underline;
+}
+
+#header {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
