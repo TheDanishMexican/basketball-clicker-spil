@@ -71,7 +71,7 @@ function basketballGone() {
 function gainPoints() {
   console.log("you gained a point");
   points += 1;
-  if (points == 3) {
+  if (points == 10) {
     levelComplete();
   }
   displayPoints();
