@@ -1,6 +1,6 @@
-window.addEventListener("load", start);
+"use strict";
 
-("use strict");
+window.addEventListener("load", start);
 
 let points = 0;
 
@@ -8,15 +8,12 @@ let life = 3;
 
 function start() {
   addPosition();
-
   addAnimation();
-
   addClick();
+  restartPosition();
 }
 
 function addPosition() {
-  console.log("Added position");
-
   let bball1 = document.querySelector("#basketball_container");
   let bball2 = document.querySelector("#basketball2_container");
   let bball3 = document.querySelector("#basketball3_container");
@@ -32,25 +29,6 @@ function addPosition() {
   fball.classList.add("position5");
   sball.classList.add("position6");
   fbball.classList.add("position7");
-}
-
-function addAnimation() {
-  console.log("Added animation");
-  let bball1 = document.querySelector("#basketball_container");
-  let bball2 = document.querySelector("#basketball2_container");
-  let bball3 = document.querySelector("#basketball3_container");
-  let vball = document.querySelector("#volleyball_container");
-  let fball = document.querySelector("#football_container");
-  let sball = document.querySelector("#soccerball_container");
-  let fbball = document.querySelector("#frenzy_basketball_container");
-
-  bball1.classList.add("shooting");
-  bball2.classList.add("shooting");
-  bball3.classList.add("shooting");
-  vball.classList.add("shooting");
-  fball.classList.add("shooting");
-  sball.classList.add("shooting");
-  fbball.classList.add("shooting");
 }
 
 function addClick() {
@@ -72,15 +50,67 @@ function addClick() {
   sball.addEventListener("mousedown", ballClicked);
 }
 
+function addAnimation() {
+  console.log("Added animation");
+  let bball1 = document.querySelector("#basketball_container");
+  let bball2 = document.querySelector("#basketball2_container");
+  let bball3 = document.querySelector("#basketball3_container");
+  let vball = document.querySelector("#volleyball_container");
+  let fball = document.querySelector("#football_container");
+  let sball = document.querySelector("#soccerball_container");
+  let fbball = document.querySelector("#frenzy_basketball_container");
+
+  bball1.classList.add("shooting");
+  bball2.classList.add("shooting");
+  bball3.classList.add("shooting");
+  vball.classList.add("shooting");
+  fball.classList.add("shooting");
+  sball.classList.add("shooting");
+  fbball.classList.add("shooting");
+}
+
 function bballClicked() {
   let ball = this;
 
   ball.removeEventListener("mousedown", bballClicked);
 
   ball.classList.add("paused");
+
   ball.querySelector("img").classList.add("zoom_out");
 
   ball.addEventListener("animationend", bballGone);
+}
+
+function bballGone() {
+  let ball = this;
+
+  ball.removeEventListener("animationend", bballGone);
+  ball.querySelector("img").classList.remove("zoom_out");
+  ball.classList.remove("paused");
+  bballRestart.call(this);
+  ball.addEventListener("mousedown", addClick);
+}
+
+function bballRestart() {
+  let ball = this;
+
+  ball.classList.remove("shooting");
+  ball.offsetWidth;
+  ball.classList.add("shooting");
+
+  ball.classList.remove(
+    "position1",
+    "position2",
+    "position3",
+    "position4",
+    "position5",
+    "position6",
+    "position7"
+  );
+
+  let pos = Math.floor(Math.random() * 7) + 1;
+
+  ball.classList.add("position" + pos);
 }
 
 function ballClicked() {
@@ -94,33 +124,18 @@ function ballClicked() {
 }
 
 function ballGone() {
-  console.log("ball is now gone");
   let ball = this;
 
-  ball.removeEventListener("animationend", ballGone);
-
-  ball.classList.remove("shooting");
-  ball.classList.remove("zoom_out");
-  ball.querySelector("img").classList.remove("paused");
+  ball.removeEventListener("animationend", bballGone);
+  ball.querySelector("img").classList.remove("zoom_out");
+  ball.classList.remove("paused");
   ballRestart.call(this);
-  ball.addEventListener("mousedown", ballClicked);
-}
-
-function bballGone() {
-  console.log("ball is now gone");
-  let ball = this;
-
-  ball.removeEventListener("animationend", ballGone);
-
-  ball.classList.remove("shooting");
-  ball.classList.remove("zoom_out");
-  ball.querySelector("img").classList.remove("paused");
-  bballRestart.call(this);
-  ball.addEventListener("mousedown", bballClicked);
+  ball.addEventListener("mousedown", addClick);
 }
 
 function ballRestart() {
   let ball = this;
+
   ball.classList.remove("shooting");
   ball.offsetWidth;
   ball.classList.add("shooting");
@@ -134,27 +149,26 @@ function ballRestart() {
     "position6",
     "position7"
   );
+
   let pos = Math.floor(Math.random() * 7) + 1;
 
   ball.classList.add("position" + pos);
 }
 
-function bballRestart() {
-  let ball = this;
-  ball.classList.remove("shooting");
-  ball.offsetWidth;
-  ball.classList.add("shooting");
+function restartPosition() {
+  let bball1 = document.querySelector("#basketball_container");
+  let bball2 = document.querySelector("#basketball2_container");
+  let bball3 = document.querySelector("#basketball3_container");
+  let vball = document.querySelector("#volleyball_container");
+  let fball = document.querySelector("#football_container");
+  let sball = document.querySelector("#soccerball_container");
+  let fbball = document.querySelector("#frenzy_basketball_container");
 
-  ball.classList.remove(
-    "position1",
-    "position2",
-    "position3",
-    "position4",
-    "position5",
-    "position6",
-    "position7"
-  );
-  let pos = Math.floor(Math.random() * 5) + 1;
-
-  ball.classList.add("position" + pos);
+  bball1.addEventListener("animationiteration", bballRestart);
+  bball2.addEventListener("animationiteration", bballRestart);
+  bball3.addEventListener("animationiteration", bballRestart);
+  fbball.addEventListener("animationiteration", bballRestart);
+  vball.addEventListener("animationiteration", ballRestart);
+  fball.addEventListener("animationiteration", ballRestart);
+  sball.addEventListener("animationiteration", ballRestart);
 }
