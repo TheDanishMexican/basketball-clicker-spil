@@ -66,14 +66,7 @@ body {
   position: relative;
   overflow: hidden;
 }
-.ball {
-  position: absolute;
-  width: 5vw;
-}
-.ball img {
-  width: 100%;
-  translate: -5vw 0vw;
-}
+
 #game_ui img {
   width: 100%;
 }
@@ -207,55 +200,59 @@ body {
 }
 
 .position1 {
-  top: 40%;
+  translate: -17vw 0vw;
 }
 
 .position2 {
-  top: 70%;
+  translate: -17vw -10vw;
 }
 
 .position3 {
-  top: 60%;
+  translate: -17vw -6vw;
 }
 
 .position4 {
-  top: 30%;
+  translate: -17vw 10vw;
 }
 
 .position5 {
-  top: 50%;
+  translate: -17vw 5vw;
 }
 
 .position6 {
-  top: 35%;
+  translate: -17vw -18vw;
 }
 
 .position7 {
-  top: 55%;
+  translate: -17vw 10vw;
 }
 
 #volleyball_container {
-  scale: 1;
-  animation-delay: 1s;
+  scale: 0.1;
+  position: absolute;
 }
 #basketball_container {
-  scale: 1;
+  scale: 0.1;
+  position: absolute;
 }
-#american_football_container {
-  scale: 1;
-  animation-delay: 1s;
+#football_container {
+  scale: 0.1;
+  position: absolute;
 }
 #soccerball_container {
-  scale: 1;
-  animation-delay: 1s;
+  scale: 0.1;
+  position: absolute;
 }
 #frenzy_basketball_container {
-  scale: 1;
-  animation-delay: 1s;
+  scale: 0.1;
+  position: absolute;
 }
+
 #basketball2_container {
-  scale: 1;
+  scale: 0.1;
+  position: absolute;
 }
 #basketball3_container {
-  scale: 1;
+  scale: 0.1;
+  position: absolute;
 }
