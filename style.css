@@ -85,45 +85,12 @@ body {
   pointer-events: none;
 }
 
-#volleyball_container {
-  top: 40%;
-  scale: 1;
-  animation-delay: 1s;
-}
-#basketball_container {
-  top: 70%;
-  scale: 1;
-}
-#american_football_container {
-  top: 60%;
-  scale: 1;
-  animation-delay: 1s;
-}
-#soccerball_container {
-  top: 30%;
-  scale: 1;
-  animation-delay: 1s;
-}
-#frenzy_basketball_container {
-  top: 50%;
-  scale: 1;
-  animation-delay: 1s;
-}
-
 .hidden {
   display: none;
 }
 
 .hidden2 {
   scale: 0;
-}
-#basketball2_container {
-  top: 35%;
-  scale: 1;
-}
-#basketball3_container {
-  top: 55%;
-  scale: 1;
 }
 
 .broken_heart {
@@ -237,4 +204,58 @@ body {
 #header {
   text-align: center;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.position1 {
+  top: 40%;
+}
+
+.position2 {
+  top: 70%;
+}
+
+.position3 {
+  top: 60%;
+}
+
+.position4 {
+  top: 30%;
+}
+
+.position5 {
+  top: 50%;
+}
+
+.position6 {
+  top: 35%;
+}
+
+.position7 {
+  top: 55%;
+}
+
+#volleyball_container {
+  scale: 1;
+  animation-delay: 1s;
+}
+#basketball_container {
+  scale: 1;
+}
+#american_football_container {
+  scale: 1;
+  animation-delay: 1s;
+}
+#soccerball_container {
+  scale: 1;
+  animation-delay: 1s;
+}
+#frenzy_basketball_container {
+  scale: 1;
+  animation-delay: 1s;
+}
+#basketball2_container {
+  scale: 1;
+}
+#basketball3_container {
+  scale: 1;
 }

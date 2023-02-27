@@ -24,6 +24,20 @@ function start() {
   document.querySelector("#full").addEventListener("animationend", gameOver);
 }
 
+function startGame() {
+  console.log("this starts the game");
+
+  document.querySelector("button").removeEventListener("click", startGame);
+
+  document.querySelector("#start").classList.add("hidden2");
+
+  document.querySelector("#full").classList.add("timer");
+
+  addAnimation();
+
+  addPosition();
+}
+
 function basketballshot() {
   document
     .querySelector("#basketball_container")
@@ -152,20 +166,126 @@ function levelComplete() {
   document.querySelector("#level_complete").classList.remove("hidden2");
 }
 
-function startGame() {
-  console.log("this starts the game");
-
-  document.querySelector("button").removeEventListener("click", startGame);
-
-  document.querySelector("#start").classList.add("hidden2");
-
-  document.querySelector("#full").classList.add("timer");
-
+function addAnimation() {
   document.querySelector("#basketball_container").classList.add("shooting");
-
   document.querySelector("#volleyball_container").classList.add("shooting");
+  document.querySelector("#basketball2_container").classList.add("shooting");
+  document.querySelector("#soccerball_container").classList.add("shooting");
+  document.querySelector("#basketball3_container").classList.add("shooting");
+  document
+    .querySelector("#american_football_container")
+    .classList.add("shooting");
+  document
+    .querySelector("#frenzy_basketball_container")
+    .classList.add("shooting");
+}
 
-  removePaused();
+function addPosition() {
+  removePosition();
+
+  let pos = Math.floor(Math.random() * 7) + 1;
+
+  document
+    .querySelector("#basketball_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#basketball2_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#basketball3_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#volleyball_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#frenzy_basketball_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#american_football_container")
+    .classList.add("position" + pos);
+  document
+    .querySelector("#soccerball_container")
+    .classList.add("position" + pos);
+}
+
+function removePosition() {
+  document
+    .querySelector("#basketball_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#volleyball_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#frenzy_basketball_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#soccerball_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#american_football_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#basketball2_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
+  document
+    .querySelector("#basketball3_container")
+    .classList.remove(
+      "position1",
+      "position2",
+      "position3",
+      "position4",
+      "position5",
+      "position6",
+      "position7"
+    );
 }
 
 function displayNameWin() {
@@ -188,17 +308,4 @@ function displayNameLose() {
   document.querySelector(
     "#losetext"
   ).textContent = `You are a stupid loser ${nameValue}`;
-}
-
-function removePaused() {
-  document.querySelector("#basketball2_container").classList.remove("paused");
-  document.querySelector("#basketball3_container").classList.remove("paused");
-
-  document
-    .querySelector("#frenzy_basketball_container")
-    .classList.remove("paused");
-  document
-    .querySelector("#american_football_container")
-    .classList.remove("paused");
-  document.querySelector("#soccerball_container").classList.remove("paused");
 }
