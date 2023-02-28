@@ -7,31 +7,31 @@
 
 @keyframes shooting {
   0% {
-    transform: translate(0vw, -100vw);
+    transform: translate(0vw, -100%);
   }
   12% {
-    transform: translate(150vw, -50vw);
+    transform: translate(12vw, -50%);
   }
   25% {
-    transform: translate(300vw, -100vw);
+    transform: translate(24vw, -100%);
   }
   37% {
-    transform: translate(450vw, -50vw);
+    transform: translate(36vw, -50%);
   }
   50% {
-    transform: translate(600vw, -100vw);
+    transform: translate(48vw, -100%);
   }
   62% {
-    transform: translate(750vw, -50vw);
+    transform: translate(60vw, -50%);
   }
   75% {
-    transform: translate(900vw, -100vw);
+    transform: translate(72vw, -100%);
   }
   87% {
-    transform: translate(1050vw, -50vw);
+    transform: translate(84vw, -50%);
   }
   100% {
-    transform: translate(1200vw, -100vw);
+    transform: translate(100vw, -100%);
   }
 }
 

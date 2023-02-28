@@ -8,7 +8,7 @@ let life = 3;
 
 function start() {
   addPosition();
-  addAnimation();
+  // addAnimation();
   addClick();
   restartPosition();
 }

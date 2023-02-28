@@ -65,6 +65,8 @@ body {
   grid-area: 1/1;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 #game_ui img {
@@ -200,31 +202,24 @@ body {
 }
 
 .position1 {
-  translate: -45vw 0vw;
 }
 
 .position2 {
-  translate: -45vw -10vw;
 }
 
 .position3 {
-  translate: -45vw -6vw;
 }
 
 .position4 {
-  translate: -45vw 10vw;
 }
 
 .position5 {
-  translate: -45vw 5vw;
 }
 
 .position6 {
-  translate: -45vw -18vw;
 }
 
 .position7 {
-  translate: -45vw 10vw;
 }
 
 #volleyball_container {
