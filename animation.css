@@ -7,7 +7,7 @@
 
 @keyframes shooting {
   0% {
-    transform: translate(0vw, -100%);
+    transform: translate(-10vw, -100%);
   }
   12% {
     transform: translate(12vw, -50%);

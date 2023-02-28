@@ -202,58 +202,94 @@ body {
 }
 
 .position1 {
+  top: 8vw;
 }
 
 .position2 {
+  top: 16vw;
 }
 
 .position3 {
+  top: 24vw;
 }
 
 .position4 {
+  top: 32vw;
 }
 
 .position5 {
+  top: 40vw;
 }
 
 .position6 {
+  top: 48vw;
 }
 
 .position7 {
+  top: 56vw;
 }
 
 #volleyball_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.1s;
 }
+
+#volleyball_container img {
+  width: 100%;
+}
+
 #basketball_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.2s;
 }
+
+#basketball_container img {
+  width: 100%;
+}
+#basketball2_container img {
+  width: 100%;
+}
+#basketball3_container img {
+  width: 100%;
+}
+
 #football_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.3s;
 }
+
+#football_container img {
+  width: 100%;
+}
+
 #soccerball_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
 }
+
+#soccerball_container img {
+  width: 100%;
+}
 #frenzy_basketball_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.4s;
 }
 
+#frenzy_basketball_container img {
+  width: 100%;
+}
+
 #basketball2_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.1s;
 }
 #basketball3_container {
-  scale: 0.1;
+  width: 10vw;
   position: absolute;
   animation-delay: 0.3s;
 }
