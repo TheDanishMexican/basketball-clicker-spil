@@ -200,44 +200,47 @@ body {
 }
 
 .position1 {
-  translate: -17vw 0vw;
+  translate: -45vw 0vw;
 }
 
 .position2 {
-  translate: -17vw -10vw;
+  translate: -45vw -10vw;
 }
 
 .position3 {
-  translate: -17vw -6vw;
+  translate: -45vw -6vw;
 }
 
 .position4 {
-  translate: -17vw 10vw;
+  translate: -45vw 10vw;
 }
 
 .position5 {
-  translate: -17vw 5vw;
+  translate: -45vw 5vw;
 }
 
 .position6 {
-  translate: -17vw -18vw;
+  translate: -45vw -18vw;
 }
 
 .position7 {
-  translate: -17vw 10vw;
+  translate: -45vw 10vw;
 }
 
 #volleyball_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.1s;
 }
 #basketball_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.2s;
 }
 #football_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.3s;
 }
 #soccerball_container {
   scale: 0.1;
@@ -246,13 +249,16 @@ body {
 #frenzy_basketball_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.4s;
 }
 
 #basketball2_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.1s;
 }
 #basketball3_container {
   scale: 0.1;
   position: absolute;
+  animation-delay: 0.3s;
 }

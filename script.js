@@ -13,6 +13,10 @@ function start() {
   restartPosition();
 }
 
+function startGame() {
+  document.querySelector("#start").classList.add("hidden2");
+}
+
 function addPosition() {
   let bball1 = document.querySelector("#basketball_container");
   let bball2 = document.querySelector("#basketball2_container");
@@ -40,14 +44,16 @@ function addClick() {
   let fball = document.querySelector("#football_container");
   let sball = document.querySelector("#soccerball_container");
   let fbball = document.querySelector("#frenzy_basketball_container");
+  let start = document.querySelector("#start");
 
   bball1.addEventListener("mousedown", bballClicked);
   bball2.addEventListener("mousedown", bballClicked);
   bball3.addEventListener("mousedown", bballClicked);
-  fbball.addEventListener("mousedown", bballClicked);
+  fbball.addEventListener("mousedown", fbballClicked);
   vball.addEventListener("mousedown", ballClicked);
   fball.addEventListener("mousedown", ballClicked);
   sball.addEventListener("mousedown", ballClicked);
+  start.addEventListener("mousedown", startGame);
 }
 
 function addAnimation() {
@@ -79,6 +85,30 @@ function bballClicked() {
   ball.querySelector("img").classList.add("zoom_out");
 
   ball.addEventListener("animationend", bballGone);
+
+  gainPoints();
+}
+
+function fbballClicked() {
+  let ball = this;
+
+  ball.removeEventListener("mousedown", bballClicked);
+
+  ball.classList.add("paused");
+
+  ball.querySelector("img").classList.add("zoom_out");
+
+  ball.addEventListener("animationend", bballGone);
+
+  life += 1;
+  if (life > 3) {
+    life = 3;
+  }
+  moreLife();
+}
+
+function moreLife() {
+  document.querySelector("#heart" + life).classList.remove("hidden2");
 }
 
 function bballGone() {
@@ -113,6 +143,23 @@ function bballRestart() {
   ball.classList.add("position" + pos);
 }
 
+function gainPoints() {
+  points += 1;
+  if (points == 10) {
+    levelComplete();
+  } else {
+    updatePoints();
+  }
+}
+
+function updatePoints() {
+  document.querySelector("#scoretext").textContent = points;
+}
+
+function levelComplete() {
+  document.querySelector("#level_complete").classList.remove("hidden2");
+}
+
 function ballClicked() {
   let ball = this;
 
@@ -121,6 +168,7 @@ function ballClicked() {
   ball.classList.add("paused");
   ball.querySelector("img").classList.add("zoom_out");
   ball.addEventListener("animationend", ballGone);
+  loseLife();
 }
 
 function ballGone() {
@@ -153,6 +201,23 @@ function ballRestart() {
   let pos = Math.floor(Math.random() * 7) + 1;
 
   ball.classList.add("position" + pos);
+}
+
+function loseLife() {
+  if (life == 1) {
+    gameOver();
+  } else {
+    updateLife();
+  }
+  life -= 1;
+}
+
+function updateLife() {
+  document.querySelector("#heart" + life).classList.add("hidden2");
+}
+
+function gameOver() {
+  document.querySelector("#game_over_screen").classList.remove("hidden2");
 }
 
 function restartPosition() {

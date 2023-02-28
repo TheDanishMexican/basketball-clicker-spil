@@ -10,28 +10,28 @@
     transform: translate(0vw, -100vw);
   }
   12% {
-    transform: translate(100vw, -50vw);
+    transform: translate(150vw, -50vw);
   }
   25% {
-    transform: translate(200vw, -100vw);
+    transform: translate(300vw, -100vw);
   }
   37% {
-    transform: translate(300vw, -50vw);
+    transform: translate(450vw, -50vw);
   }
   50% {
-    transform: translate(400vw, -100vw);
-  }
-  62% {
-    transform: translate(500vw, -50vw);
-  }
-  75% {
     transform: translate(600vw, -100vw);
   }
+  62% {
+    transform: translate(750vw, -50vw);
+  }
+  75% {
+    transform: translate(900vw, -100vw);
+  }
   87% {
-    transform: translate(700vw, -50vw);
+    transform: translate(1050vw, -50vw);
   }
   100% {
-    transform: translate(800vw, -100vw);
+    transform: translate(1200vw, -100vw);
   }
 }
 
