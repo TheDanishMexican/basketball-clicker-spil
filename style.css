@@ -29,11 +29,23 @@ body {
   position: absolute;
 }
 
+#game_over_screen img {
+  width: 100%;
+  position: absolute;
+}
+
 #level_complete {
   aspect-ratio: inherit;
   width: 100%;
   position: absolute;
 }
+
+#level_complete img {
+  aspect-ratio: inherit;
+  width: 100%;
+  position: absolute;
+}
+
 #game_background {
   grid-area: 1/1;
   background-image: url(images/basketball_court.png);
@@ -132,25 +144,20 @@ body {
   scale: 0.7;
 }
 
-#game_over_screen {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  background-color: red;
-}
 #game_over_screen p {
-  grid-row: 2/3;
+  position: absolute;
+  background-color: red;
   font-size: 5vw;
-  text-align: center;
+  left: 25vw;
+  top: 50vw;
 }
-#level_complete {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  background-color: aquamarine;
-}
+
 #level_complete p {
-  grid-row: 1/3;
+  background-color: aquamarine;
+  position: absolute;
   font-size: 5vw;
-  text-align: center;
+  left: 0.5vw;
+  top: 40vw;
 }
 #level_complete_img {
   background-image: url(images/fireworks.jpg);
@@ -202,37 +209,43 @@ body {
 }
 
 .position1 {
-  top: 8vw;
+  top: 18vw;
 }
 
 .position2 {
-  top: 16vw;
+  top: 13vw;
 }
 
 .position3 {
-  top: 24vw;
+  top: 20vw;
 }
 
 .position4 {
-  top: 32vw;
+  top: 27vw;
 }
 
 .position5 {
-  top: 40vw;
+  top: 36vw;
 }
 
 .position6 {
-  top: 48vw;
+  top: 40vw;
 }
 
 .position7 {
-  top: 56vw;
+  top: 43vw;
+}
+.position8 {
+  top: 33vw;
+}
+.position9 {
+  top: 24vw;
 }
 
 #volleyball_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
-  animation-delay: 0.1s;
+  animation-delay: 0.3s;
 }
 
 #volleyball_container img {
@@ -240,7 +253,7 @@ body {
 }
 
 #basketball_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
   animation-delay: 0.2s;
 }
@@ -256,7 +269,7 @@ body {
 }
 
 #football_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
   animation-delay: 0.3s;
 }
@@ -266,7 +279,7 @@ body {
 }
 
 #soccerball_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
 }
 
@@ -274,7 +287,7 @@ body {
   width: 100%;
 }
 #frenzy_basketball_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
   animation-delay: 0.4s;
 }
@@ -284,12 +297,12 @@ body {
 }
 
 #basketball2_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
   animation-delay: 0.1s;
 }
 #basketball3_container {
-  width: 10vw;
+  width: 5vw;
   position: absolute;
   animation-delay: 0.3s;
 }

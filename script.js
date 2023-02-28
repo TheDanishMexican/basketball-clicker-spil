@@ -8,13 +8,13 @@ let life = 3;
 
 function start() {
   addPosition();
-  // addAnimation();
   addClick();
   restartPosition();
 }
 
 function startGame() {
   document.querySelector("#start").classList.add("hidden2");
+  addAnimation();
 }
 
 function addPosition() {
@@ -135,10 +135,12 @@ function bballRestart() {
     "position4",
     "position5",
     "position6",
-    "position7"
+    "position7",
+    "position8",
+    "position9"
   );
 
-  let pos = Math.floor(Math.random() * 7) + 1;
+  let pos = Math.floor(Math.random() * 9) + 1;
 
   ball.classList.add("position" + pos);
 }
@@ -195,7 +197,9 @@ function ballRestart() {
     "position4",
     "position5",
     "position6",
-    "position7"
+    "position7",
+    "position8",
+    "position9"
   );
 
   let pos = Math.floor(Math.random() * 7) + 1;

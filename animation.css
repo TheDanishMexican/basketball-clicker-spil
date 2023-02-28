@@ -1,37 +1,48 @@
 .shooting {
   animation-name: shooting;
-  animation-duration: 5s;
+  animation-duration: 7s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  transform: scale(0);
 }
 
 @keyframes shooting {
+  0%,
+  100% {
+    transform: scale(1);
+  }
   0% {
-    transform: translate(-10vw, -100%);
+    transform: translate(0, -5vw);
   }
-  12% {
-    transform: translate(12vw, -50%);
+  10% {
+    transform: translate(10vw, 5vw);
   }
-  25% {
-    transform: translate(24vw, -100%);
+  20% {
+    transform: translate(20vw, -5vw);
   }
-  37% {
-    transform: translate(36vw, -50%);
+  30% {
+    transform: translate(30vw, 5vw);
+  }
+  40% {
+    transform: translate(40vw, -5vw);
   }
   50% {
-    transform: translate(48vw, -100%);
+    transform: translate(50vw, 5vw);
   }
-  62% {
-    transform: translate(60vw, -50%);
+  60% {
+    transform: translate(60vw, -5vw);
   }
-  75% {
-    transform: translate(72vw, -100%);
+  70% {
+    transform: translate(70vw, 5vw);
   }
-  87% {
-    transform: translate(84vw, -50%);
+  80% {
+    transform: translate(80vw, -5vw);
+  }
+  90% {
+    transform: translate(90vw, 5vw);
   }
   100% {
-    transform: translate(100vw, -100%);
+    transform: translate(100vw, -5vw);
   }
 }
 
