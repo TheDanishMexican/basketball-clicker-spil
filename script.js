@@ -13,7 +13,11 @@ function start() {
 }
 
 function startGame() {
+  document.querySelector("#game_sound").volume = 0.3;
+  document.querySelector("#game_sound").play();
+
   document.querySelector("#start").classList.add("hidden2");
+
   addAnimation();
 }
 
@@ -58,6 +62,7 @@ function addClick() {
 
 function addAnimation() {
   console.log("Added animation");
+
   let bball1 = document.querySelector("#basketball_container");
   let bball2 = document.querySelector("#basketball2_container");
   let bball3 = document.querySelector("#basketball3_container");
@@ -76,6 +81,9 @@ function addAnimation() {
 }
 
 function bballClicked() {
+  document.querySelector("#ball_sound").currentTime = 0;
+  document.querySelector("#ball_sound").play();
+
   let ball = this;
 
   ball.removeEventListener("mousedown", bballClicked);
@@ -90,6 +98,8 @@ function bballClicked() {
 }
 
 function fbballClicked() {
+  document.querySelector("#fbball_sound").play();
+
   let ball = this;
 
   ball.removeEventListener("mousedown", bballClicked);
@@ -159,10 +169,15 @@ function updatePoints() {
 }
 
 function levelComplete() {
+  document.querySelector("#game_sound").pause();
+  document.querySelector("#win_sound").play();
   document.querySelector("#level_complete").classList.remove("hidden2");
 }
 
 function ballClicked() {
+  document.querySelector("#bomb_sound").currentTime = 0;
+  document.querySelector("#bomb_sound").play();
+
   let ball = this;
 
   ball.removeEventListener("mousedown", ballClicked);
@@ -221,6 +236,8 @@ function updateLife() {
 }
 
 function gameOver() {
+  document.querySelector("#game_sound").pause();
+  document.querySelector("#lose_sound").play();
   document.querySelector("#game_over_screen").classList.remove("hidden2");
 }
 
