@@ -81,6 +81,7 @@ function addAnimation() {
 }
 
 function bballClicked() {
+  document.querySelector("#ball_sound").volume = 0.5;
   document.querySelector("#ball_sound").currentTime = 0;
   document.querySelector("#ball_sound").play();
 
@@ -98,6 +99,7 @@ function bballClicked() {
 }
 
 function fbballClicked() {
+  document.querySelector("#fbball_sound").volume = 0.7;
   document.querySelector("#fbball_sound").play();
 
   let ball = this;
