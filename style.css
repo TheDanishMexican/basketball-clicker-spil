@@ -31,7 +31,6 @@ body {
 
 #game_over_screen img {
   width: 100%;
-  position: absolute;
 }
 
 #level_complete {

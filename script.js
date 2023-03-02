@@ -4,7 +4,7 @@ window.addEventListener("load", start);
 
 let points = 0;
 
-let life = 3;
+let life = 0;
 
 function start() {
   addPosition();
@@ -13,8 +13,17 @@ function start() {
 }
 
 function startGame() {
+  points = 0;
+  life = 3;
+
   document.querySelector("#game_sound").volume = 0.3;
   document.querySelector("#game_sound").play();
+
+  resetPoints();
+
+  resetLives();
+
+  resetScreen();
 
   document.querySelector("#start").classList.add("hidden2");
 
@@ -60,13 +69,8 @@ function addClick() {
   fball.addEventListener("mousedown", ballClicked);
   sball.addEventListener("mousedown", ballClicked);
   start.addEventListener("mousedown", startGame);
-  playAgain.addEventListener("mousedown", reloadPage);
-  tryAgain.addEventListener("mousedown", reloadPage);
-}
-
-function reloadPage() {
-  console.log("reload page works");
-  window.location.reload();
+  playAgain.addEventListener("mousedown", startGame);
+  tryAgain.addEventListener("mousedown", startGame);
 }
 
 function addAnimation() {
@@ -129,7 +133,8 @@ function fbballClicked() {
 }
 
 function moreLife() {
-  document.querySelector("#heart" + life).classList.remove("hidden2");
+  document.querySelector("#heart" + life).classList.remove("broken_heart");
+  document.querySelector("#heart" + life).classList.add("active_heart");
 }
 
 function bballGone() {
@@ -168,7 +173,7 @@ function bballRestart() {
 
 function gainPoints() {
   points += 1;
-  if (points == 25) {
+  if (points == 3) {
     levelComplete();
   } else {
     updatePoints();
@@ -182,8 +187,10 @@ function updatePoints() {
 function levelComplete() {
   document.querySelector("#game_sound").pause();
   document.querySelector("#win_sound").play();
-  removeAnimation();
+  // removeAnimation();
   document.querySelector("#level_complete").classList.remove("hidden2");
+  document.querySelector("#level_complete").offsetWidth;
+  document.querySelector("#level_complete").classList.add("screen_change");
 }
 
 function ballClicked() {
@@ -203,7 +210,7 @@ function ballClicked() {
 function ballGone() {
   let ball = this;
 
-  ball.removeEventListener("animationend", bballGone);
+  ball.removeEventListener("animationend", ballGone);
   ball.querySelector("img").classList.remove("zoom_out");
   ball.classList.remove("paused");
   ballRestart.call(this);
@@ -244,14 +251,17 @@ function loseLife() {
 }
 
 function updateLife() {
-  document.querySelector("#heart" + life).classList.add("hidden2");
+  document.querySelector("#heart" + life).classList.add("broken_heart");
+  document.querySelector("#heart" + life).classList.remove("active_heart");
 }
 
 function gameOver() {
   document.querySelector("#game_sound").pause();
   document.querySelector("#lose_sound").play();
-  removeAnimation();
+  // removeAnimation();
   document.querySelector("#game_over_screen").classList.remove("hidden2");
+  document.querySelector("#game_over_screen").offsetWidth;
+  document.querySelector("#game_over_screen").classList.add("screen_change");
 }
 
 function restartPosition() {
@@ -272,28 +282,51 @@ function restartPosition() {
   sball.addEventListener("animationiteration", ballRestart);
 }
 
-function removeAnimation() {
-  let bball1 = document.querySelector("#basketball_container");
-  let bball2 = document.querySelector("#basketball2_container");
-  let bball3 = document.querySelector("#basketball3_container");
-  let vball = document.querySelector("#volleyball_container");
-  let fball = document.querySelector("#football_container");
-  let sball = document.querySelector("#soccerball_container");
-  let fbball = document.querySelector("#frenzy_basketball_container");
+// function removeAnimation() {
+//   let bball1 = document.querySelector("#basketball_container");
+//   let bball2 = document.querySelector("#basketball2_container");
+//   let bball3 = document.querySelector("#basketball3_container");
+//   let vball = document.querySelector("#volleyball_container");
+//   let fball = document.querySelector("#football_container");
+//   let sball = document.querySelector("#soccerball_container");
+//   let fbball = document.querySelector("#frenzy_basketball_container");
 
-  bball1.removeEventListener("animationiteration", bballRestart);
-  bball2.removeEventListener("animationiteration", bballRestart);
-  bball3.removeEventListener("animationiteration", bballRestart);
-  fbball.removeEventListener("animationiteration", bballRestart);
-  vball.removeEventListener("animationiteration", ballRestart);
-  fball.removeEventListener("animationiteration", ballRestart);
-  sball.removeEventListener("animationiteration", ballRestart);
+//   bball1.removeEventListener("animationend", bballGone);
+//   bball2.removeEventListener("animationend", bballGone);
+//   bball3.removeEventListener("animationend", bballGone);
+//   vball.removeEventListener("animationend", ballGone);
+//   fball.removeEventListener("animationend", ballGone);
+//   sball.removeEventListener("animationend", ballGone);
+//   fbball.removeEventListener("animationend", bballGone);
 
-  bball1.classList.add("paused");
-  bball2.classList.add("paused");
-  bball3.classList.add("paused");
-  vball.classList.add("paused");
-  fball.classList.add("paused");
-  sball.classList.add("paused");
-  fbball.classList.add("paused");
+//   bball1.classList.remove("shooting");
+//   bball2.classList.remove("shooting");
+//   bball3.classList.remove("shooting");
+//   vball.classList.remove("shooting");
+//   fball.classList.remove("shooting");
+//   sball.classList.remove("shooting");
+//   fbball.classList.remove("shooting");
+// }
+
+function resetLives() {
+  document.querySelector("#heart1").classList.remove("broken_heart");
+  document.querySelector("#heart2").classList.remove("broken_heart");
+  document.querySelector("#heart3").classList.remove("broken_heart");
+  document.querySelector("#heart1").classList.add("active_heart");
+  document.querySelector("#heart2").classList.add("active_heart");
+  document.querySelector("#heart3").classList.add("active_heart");
+}
+
+function resetPoints() {
+  points = 0;
+  updatePoints();
+}
+
+function resetScreen() {
+  console.log("Reset screen");
+  document.querySelector("#start").classList.remove("hidden2");
+  document.querySelector("#game_over_screen").classList.add("hidden2");
+  document.querySelector("#level_complete").classList.add("hidden2");
+  document.querySelector("#game_over_screen").classList.remove("screen_change");
+  document.querySelector("#level_complete").classList.remove("screen_change");
 }
