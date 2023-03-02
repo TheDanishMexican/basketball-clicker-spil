@@ -281,6 +281,14 @@ function removeAnimation() {
   let sball = document.querySelector("#soccerball_container");
   let fbball = document.querySelector("#frenzy_basketball_container");
 
+  bball1.removeEventListener("animationiteration", bballRestart);
+  bball2.removeEventListener("animationiteration", bballRestart);
+  bball3.removeEventListener("animationiteration", bballRestart);
+  fbball.removeEventListener("animationiteration", bballRestart);
+  vball.removeEventListener("animationiteration", ballRestart);
+  fball.removeEventListener("animationiteration", ballRestart);
+  sball.removeEventListener("animationiteration", ballRestart);
+
   bball1.classList.add("paused");
   bball2.classList.add("paused");
   bball3.classList.add("paused");
