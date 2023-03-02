@@ -48,7 +48,9 @@ function addClick() {
   let fball = document.querySelector("#football_container");
   let sball = document.querySelector("#soccerball_container");
   let fbball = document.querySelector("#frenzy_basketball_container");
-  let start = document.querySelector("#start");
+  let start = document.querySelector("#startbutton");
+  let playAgain = document.querySelector("#playAgainButton");
+  let tryAgain = document.querySelector("#game_over_button");
 
   bball1.addEventListener("mousedown", bballClicked);
   bball2.addEventListener("mousedown", bballClicked);
@@ -58,6 +60,13 @@ function addClick() {
   fball.addEventListener("mousedown", ballClicked);
   sball.addEventListener("mousedown", ballClicked);
   start.addEventListener("mousedown", startGame);
+  playAgain.addEventListener("mousedown", reloadPage);
+  tryAgain.addEventListener("mousedown", reloadPage);
+}
+
+function reloadPage() {
+  console.log("reload page works");
+  window.location.reload();
 }
 
 function addAnimation() {
@@ -173,6 +182,7 @@ function updatePoints() {
 function levelComplete() {
   document.querySelector("#game_sound").pause();
   document.querySelector("#win_sound").play();
+  removeAnimation();
   document.querySelector("#level_complete").classList.remove("hidden2");
 }
 
@@ -240,6 +250,7 @@ function updateLife() {
 function gameOver() {
   document.querySelector("#game_sound").pause();
   document.querySelector("#lose_sound").play();
+  removeAnimation();
   document.querySelector("#game_over_screen").classList.remove("hidden2");
 }
 
@@ -259,4 +270,22 @@ function restartPosition() {
   vball.addEventListener("animationiteration", ballRestart);
   fball.addEventListener("animationiteration", ballRestart);
   sball.addEventListener("animationiteration", ballRestart);
+}
+
+function removeAnimation() {
+  let bball1 = document.querySelector("#basketball_container");
+  let bball2 = document.querySelector("#basketball2_container");
+  let bball3 = document.querySelector("#basketball3_container");
+  let vball = document.querySelector("#volleyball_container");
+  let fball = document.querySelector("#football_container");
+  let sball = document.querySelector("#soccerball_container");
+  let fbball = document.querySelector("#frenzy_basketball_container");
+
+  bball1.classList.remove("shooting");
+  bball2.classList.remove("shooting");
+  bball3.classList.remove("shooting");
+  vball.classList.remove("shooting");
+  fball.classList.remove("shooting");
+  sball.classList.remove("shooting");
+  fbball.classList.remove("shooting");
 }

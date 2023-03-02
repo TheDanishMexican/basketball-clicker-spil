@@ -110,3 +110,22 @@
     translate: opacity(1);
   }
 }
+
+.screen_change {
+  animation-name: screen_change;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes screen_change {
+  0% {
+    translate: scale(0);
+  }
+  50% {
+    translate: scale(0.5);
+  }
+  100% {
+    translate: scale(0.8);
+  }
+}
