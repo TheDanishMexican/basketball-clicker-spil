@@ -168,7 +168,7 @@ function bballRestart() {
 
 function gainPoints() {
   points += 1;
-  if (points == 10) {
+  if (points == 25) {
     levelComplete();
   } else {
     updatePoints();
@@ -229,7 +229,7 @@ function ballRestart() {
     "position9"
   );
 
-  let pos = Math.floor(Math.random() * 7) + 1;
+  let pos = Math.floor(Math.random() * 9) + 1;
 
   ball.classList.add("position" + pos);
 }
@@ -281,11 +281,11 @@ function removeAnimation() {
   let sball = document.querySelector("#soccerball_container");
   let fbball = document.querySelector("#frenzy_basketball_container");
 
-  bball1.classList.remove("shooting");
-  bball2.classList.remove("shooting");
-  bball3.classList.remove("shooting");
-  vball.classList.remove("shooting");
-  fball.classList.remove("shooting");
-  sball.classList.remove("shooting");
-  fbball.classList.remove("shooting");
+  bball1.classList.add("paused");
+  bball2.classList.add("paused");
+  bball3.classList.add("paused");
+  vball.classList.add("paused");
+  fball.classList.add("paused");
+  sball.classList.add("paused");
+  fbball.classList.add("paused");
 }

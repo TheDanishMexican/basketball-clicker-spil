@@ -178,8 +178,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
-  cursor: pointer;
 }
 
 #level_complete p {
@@ -216,8 +214,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-
-  cursor: pointer;
 }
 
 #level_complete_img {
