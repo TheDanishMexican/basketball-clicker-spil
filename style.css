@@ -71,6 +71,7 @@ body {
   position: absolute;
   display: grid;
   grid-template-columns: 5fr 5fr 2fr;
+  grid-template-rows: 1;
 }
 #game_elements {
   grid-area: 1/1;
@@ -86,6 +87,7 @@ body {
 #life_board {
   width: 15vw;
   grid-column: 3/3;
+  grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   pointer-events: none;
@@ -110,6 +112,7 @@ body {
   grid-column: 2/3;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-row: 1;
 }
 
 #bbscore img {
@@ -463,4 +466,30 @@ body {
   touch-action: manipulation;
 
   cursor: pointer;
+}
+
+#time_board {
+  grid-column: 1/3;
+  width: 100%;
+  grid-row: 1;
+}
+
+#time_container {
+  aspect-ratio: 55/6;
+  width: 30vw;
+
+  border: 2px solid black;
+  background-color: rgba(208, 204, 204, 0.383);
+  margin-top: 1vw;
+  margin-left: 5vw;
+}
+
+#time_sprite {
+  aspect-ratio: 55/6;
+  position: absolute;
+  width: 30vw;
+  background-color: limegreen;
+  transform-origin: left;
+
+  top: 1.1vw;
 }

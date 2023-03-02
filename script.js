@@ -28,6 +28,8 @@ function startGame() {
   document.querySelector("#start").classList.add("hidden2");
 
   addAnimation();
+
+  timer();
 }
 
 function addPosition() {
@@ -173,7 +175,7 @@ function bballRestart() {
 
 function gainPoints() {
   points += 1;
-  if (points == 3) {
+  if (points == 30) {
     levelComplete();
   } else {
     updatePoints();
@@ -329,4 +331,21 @@ function resetScreen() {
   document.querySelector("#level_complete").classList.add("hidden2");
   document.querySelector("#game_over_screen").classList.remove("screen_change");
   document.querySelector("#level_complete").classList.remove("screen_change");
+}
+
+function timer() {
+  document.querySelector("#time_sprite").classList.remove("shrink");
+  document.querySelector("#time_sprite").offsetWidth;
+  document.querySelector("#time_sprite").classList.add("shrink");
+  document
+    .querySelector("#time_sprite")
+    .addEventListener("animationend", timeOver);
+}
+
+function timeOver() {
+  if (points >= 25) {
+    levelComplete();
+  } else {
+    gameOver();
+  }
 }
