@@ -6,6 +6,8 @@ let points = 0;
 
 let life = 0;
 
+let isGameRunning = false;
+
 function start() {
   addPosition();
   addClick();
@@ -13,6 +15,8 @@ function start() {
 }
 
 function startGame() {
+  isGameRunning = true;
+
   points = 0;
   life = 3;
 
@@ -145,7 +149,9 @@ function bballGone() {
   ball.removeEventListener("animationend", bballGone);
   ball.querySelector("img").classList.remove("zoom_out");
   ball.classList.remove("paused");
-  bballRestart.call(this);
+  if (isGameRunning) {
+    bballRestart.call(this);
+  }
   ball.addEventListener("mousedown", addClick);
 }
 
@@ -187,9 +193,10 @@ function updatePoints() {
 }
 
 function levelComplete() {
+  isGameRunning = false;
   document.querySelector("#game_sound").pause();
   document.querySelector("#win_sound").play();
-  // removeAnimation();
+  removeAnimation();
   document.querySelector("#level_complete").classList.remove("hidden2");
   document.querySelector("#level_complete").offsetWidth;
   document.querySelector("#level_complete").classList.add("screen_change");
@@ -215,7 +222,9 @@ function ballGone() {
   ball.removeEventListener("animationend", ballGone);
   ball.querySelector("img").classList.remove("zoom_out");
   ball.classList.remove("paused");
-  ballRestart.call(this);
+  if (isGameRunning) {
+    ballRestart.call(this);
+  }
   ball.addEventListener("mousedown", addClick);
 }
 
@@ -258,9 +267,11 @@ function updateLife() {
 }
 
 function gameOver() {
+  isGameRunning = false;
+
   document.querySelector("#game_sound").pause();
   document.querySelector("#lose_sound").play();
-  // removeAnimation();
+  removeAnimation();
   document.querySelector("#game_over_screen").classList.remove("hidden2");
   document.querySelector("#game_over_screen").offsetWidth;
   document.querySelector("#game_over_screen").classList.add("screen_change");
@@ -284,31 +295,24 @@ function restartPosition() {
   sball.addEventListener("animationiteration", ballRestart);
 }
 
-// function removeAnimation() {
-//   let bball1 = document.querySelector("#basketball_container");
-//   let bball2 = document.querySelector("#basketball2_container");
-//   let bball3 = document.querySelector("#basketball3_container");
-//   let vball = document.querySelector("#volleyball_container");
-//   let fball = document.querySelector("#football_container");
-//   let sball = document.querySelector("#soccerball_container");
-//   let fbball = document.querySelector("#frenzy_basketball_container");
+function removeAnimation() {
+  isGameRunning = false;
+  let bball1 = document.querySelector("#basketball_container");
+  let bball2 = document.querySelector("#basketball2_container");
+  let bball3 = document.querySelector("#basketball3_container");
+  let vball = document.querySelector("#volleyball_container");
+  let fball = document.querySelector("#football_container");
+  let sball = document.querySelector("#soccerball_container");
+  let fbball = document.querySelector("#frenzy_basketball_container");
 
-//   bball1.removeEventListener("animationend", bballGone);
-//   bball2.removeEventListener("animationend", bballGone);
-//   bball3.removeEventListener("animationend", bballGone);
-//   vball.removeEventListener("animationend", ballGone);
-//   fball.removeEventListener("animationend", ballGone);
-//   sball.removeEventListener("animationend", ballGone);
-//   fbball.removeEventListener("animationend", bballGone);
-
-//   bball1.classList.remove("shooting");
-//   bball2.classList.remove("shooting");
-//   bball3.classList.remove("shooting");
-//   vball.classList.remove("shooting");
-//   fball.classList.remove("shooting");
-//   sball.classList.remove("shooting");
-//   fbball.classList.remove("shooting");
-// }
+  bball1.classList.remove("shooting");
+  bball2.classList.remove("shooting");
+  bball3.classList.remove("shooting");
+  vball.classList.remove("shooting");
+  fball.classList.remove("shooting");
+  sball.classList.remove("shooting");
+  fbball.classList.remove("shooting");
+}
 
 function resetLives() {
   document.querySelector("#heart1").classList.remove("broken_heart");

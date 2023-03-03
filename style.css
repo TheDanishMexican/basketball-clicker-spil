@@ -150,8 +150,8 @@ body {
   position: absolute;
   background-color: red;
   font-size: 10vw;
-  left: 20vw;
-  top: 20vw;
+  left: 25vw;
+  top: 10vw;
   color: black;
   padding: 15px 25px;
   background-color: #db0808;
@@ -431,8 +431,8 @@ body {
 #game_over_screen button {
   position: absolute;
   font-size: x-large;
-  top: 35vw;
-  left: 40vw;
+  top: 30vw;
+  left: 50vw;
 }
 
 #game_over_screen button {
