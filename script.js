@@ -211,7 +211,7 @@ function ballClicked() {
   ball.removeEventListener("mousedown", ballClicked);
 
   ball.classList.add("paused");
-  ball.querySelector("img").classList.add("zoom_out");
+  ball.querySelector("img").classList.add("zoom_in");
   ball.addEventListener("animationend", ballGone);
   loseLife();
 }
@@ -220,7 +220,7 @@ function ballGone() {
   let ball = this;
 
   ball.removeEventListener("animationend", ballGone);
-  ball.querySelector("img").classList.remove("zoom_out");
+  ball.querySelector("img").classList.remove("zoom_in");
   ball.classList.remove("paused");
   if (isGameRunning) {
     ballRestart.call(this);
@@ -267,6 +267,7 @@ function updateLife() {
 }
 
 function gameOver() {
+  console.log("game over added");
   isGameRunning = false;
 
   document.querySelector("#game_sound").pause();
@@ -296,6 +297,7 @@ function restartPosition() {
 }
 
 function removeAnimation() {
+  console.log("removed animation");
   isGameRunning = false;
   let bball1 = document.querySelector("#basketball_container");
   let bball2 = document.querySelector("#basketball2_container");
@@ -305,6 +307,7 @@ function removeAnimation() {
   let sball = document.querySelector("#soccerball_container");
   let fbball = document.querySelector("#frenzy_basketball_container");
 
+  document.querySelector("#time_sprite").classList.remove("shrink");
   bball1.classList.remove("shooting");
   bball2.classList.remove("shooting");
   bball3.classList.remove("shooting");

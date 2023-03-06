@@ -62,6 +62,20 @@
     transform: scale(0%) rotate(360deg);
   }
 }
+
+.zoom_in {
+  animation-name: zoom_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes zoom_in {
+  100% {
+    transform: scale(30) rotate(360deg);
+  }
+}
+
 .fade_in_out {
   animation-name: fade_in_out;
   animation-duration: 1s;
