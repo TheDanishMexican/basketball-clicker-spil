@@ -152,7 +152,7 @@ function bballGone() {
   if (isGameRunning) {
     bballRestart.call(this);
   }
-  ball.addEventListener("mousedown", addClick);
+  ball.addEventListener("mousedown", bballClicked);
 }
 
 function bballRestart() {
@@ -225,7 +225,7 @@ function ballGone() {
   if (isGameRunning) {
     ballRestart.call(this);
   }
-  ball.addEventListener("mousedown", addClick);
+  ball.addEventListener("mousedown", ballClicked);
 }
 
 function ballRestart() {
